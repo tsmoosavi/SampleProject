@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleProject">
         <activity
-            android:name=".MainActivity"
+            android:name=".DoctorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
