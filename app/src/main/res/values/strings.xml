@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">doctor</string>
+    <string name="hello">سلام دکتر</string>
 </resources>

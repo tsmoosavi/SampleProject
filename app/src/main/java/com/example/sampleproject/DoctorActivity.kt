@@ -10,6 +10,6 @@ class DoctorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
        binding = ActivityDoctorBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        binding.textview1.text = getString(R.string.hello)
     }
 }
