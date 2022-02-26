@@ -1,5 +1,10 @@
 package com.example.sampleproject
-object Hospital{
+
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+object Hospital : Parcelable {
     var doctorList = arrayListOf<Doctor>()
     val consultancyList = arrayListOf(
         Consultancy(1 , 30 , 100000, CosultancyType.phone),
@@ -19,7 +24,7 @@ class Doctor(
     var onlineStatus: OnlineStatus,
     var field : String,
     var  ImageId: Int? = null
-)
+):Parcelable{}
 data class Consultancy(val id:Int,
                        val time: Int,
                        val price: Int,
