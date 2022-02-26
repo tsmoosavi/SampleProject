@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#23D6F1</color>
+    <string name="thityMin">مشاوره تلفنی 10 دقیقه ای</string>
+    <string name="tenPrice">24,000 تومان</string>
 </resources>

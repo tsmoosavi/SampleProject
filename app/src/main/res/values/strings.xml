@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">doctor</string>
     <string name="hello">سلام دکتر</string>
+    <string name="docName">معصومه بهرامی</string>
+    <string name="statusBox">آنلاین</string>
+    <string name="MedicalSpeciality">مشاوره فردی، اضطراب، افسردگی، شغلی و تحصیلی، استعداد یابی...</string>
+    <string name="mesageBox">ارسال پیام</string>
+    <string name="thirtyMin">مشاوره تلفنی 30 دقیقه ای</string>
+    <string name="sixtyMin">مشاوره تلفنی 60 دقیقه ای</string>
+    <string name="callToDoctor">تماس با دکتر</string>
 </resources>
