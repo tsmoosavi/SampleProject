@@ -17,7 +17,7 @@ object Hospital : Parcelable {
         doctorList.add(Doctor(2 , "Dr. rostam" , OnlineStatus.offline , "روانشناسی و مشاوره" ))
     }
 }
-
+@Parcelize
 class Doctor(
     val id: Int,
     val name: String,

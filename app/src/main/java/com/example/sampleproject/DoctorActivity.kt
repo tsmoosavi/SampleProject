@@ -14,14 +14,14 @@ class DoctorActivity : AppCompatActivity() {
 
     }
     fun initViwes(){
-        Hospital.setTestData()
-        var myDoctor = Hospital.doctorList[0]
-        binding.nameBox.text = myDoctor.name
-        binding.statusView.text = myDoctor.onlineStatus.toString()
-        binding.MedicalSpeciality.text = myDoctor.field
+        var doc = intent.getParcelableExtra<Doctor>(DOCTOR)
+        binding.nameBox.text = doc?.name
+        binding.statusView.text = doc?.onlineStatus.toString()
+        binding.MedicalSpeciality.text = doc?.field
+
         var consult1 = Hospital.consultancyList[0]
         binding.tenMin.text = "مشاوره تلفنی ${consult1.time} دقیقه ای "
-        binding.tenPrice.text = consult1.price.toString()
+        binding.tenPrice.text = consult1.price.toString()+ "تومان"
 
     }
 }

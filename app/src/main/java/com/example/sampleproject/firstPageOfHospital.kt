@@ -19,15 +19,23 @@ class firstPageOfHospital : AppCompatActivity() {
         binding.button.text = Hospital.doctorList[0].name
         binding.button2.text = Hospital.doctorList[1].name
         binding.button3.text = Hospital.doctorList[2].name
-         var intent = Intent(this , DoctorActivity::class.java)
+
+        for(i in 0 until buttonsList.size){
+            buttonsList[i].setOnClickListener{
+                goToDoctorActivity(Hospital.doctorList[i])
+            }
+        }
+
+
 
 
 
 
     }
-    fun goToDoctorActivity(doctor: Doctor):Doctor{
+    fun goToDoctorActivity(doctor: Doctor){
         var intent = Intent(this , DoctorActivity::class.java)
         intent.putExtra( DOCTOR,doctor)
+        startActivity(intent)
 
     }
 
