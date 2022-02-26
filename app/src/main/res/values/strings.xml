@@ -8,4 +8,6 @@
     <string name="thirtyMin">مشاوره تلفنی 30 دقیقه ای</string>
     <string name="sixtyMin">مشاوره تلفنی 60 دقیقه ای</string>
     <string name="callToDoctor">تماس با دکتر</string>
+    <string name="welcome">به بیمارستان نور خوش آمدید</string>
+    <string name="chooseDoctor">لطفا دکتر خود را انتخاب کنید</string>
 </resources>

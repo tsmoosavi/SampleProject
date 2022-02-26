@@ -10,5 +10,11 @@ class firstPageOfHospital : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFirstPageOfHospitalBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Hospital.doctorList
+        binding.button.text = Hospital.doctorList[0].name
+        binding.button2.text = Hospital.doctorList[1].name
+        binding.button3.text = Hospital.doctorList[2].name
+
+
     }
 }
