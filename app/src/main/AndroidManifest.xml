@@ -10,18 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleProject">
         <activity
-            android:name=".firstPageOfHospital"
-            android:exported="false" />
-        <activity
-            android:name=".DoctorActivity"
-            android:exported="true"
-            android:parentActivityName=".firstPageOfHospital">
+            android:name=".HospitalFirstPage"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".DoctorActivity"
+            android:exported="false"
+            android:parentActivityName=".HospitalFirstPage" />
     </application>
 
 </manifest>

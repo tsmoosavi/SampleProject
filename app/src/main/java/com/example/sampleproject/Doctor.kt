@@ -3,8 +3,7 @@ package com.example.sampleproject
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
-@Parcelize
-object Hospital : Parcelable {
+object Hospital {
     var doctorList = arrayListOf<Doctor>()
     val consultancyList = arrayListOf(
         Consultancy(1 , 30 , 100000, CosultancyType.phone),

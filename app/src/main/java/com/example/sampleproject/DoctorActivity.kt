@@ -18,10 +18,17 @@ class DoctorActivity : AppCompatActivity() {
         binding.nameBox.text = doc?.name
         binding.statusView.text = doc?.onlineStatus.toString()
         binding.MedicalSpeciality.text = doc?.field
+        title = doc?.name
 
+        var consult2 = Hospital.consultancyList[1]
+        binding.tenMin.text = "مشاوره تلفنی ${consult2.time} دقیقه ای "
+        binding.tenPrice.text = consult2.price.toString()+ "تومان"
         var consult1 = Hospital.consultancyList[0]
         binding.tenMin.text = "مشاوره تلفنی ${consult1.time} دقیقه ای "
         binding.tenPrice.text = consult1.price.toString()+ "تومان"
+        var consult3 = Hospital.consultancyList[2]
+        binding.tenMin.text = "مشاوره تلفنی ${consult3.time} دقیقه ای "
+        binding.tenPrice.text = consult3.price.toString()+ "تومان"
 
     }
 }
