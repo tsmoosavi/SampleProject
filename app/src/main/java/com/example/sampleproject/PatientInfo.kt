@@ -28,9 +28,6 @@ class PatientInfo : AppCompatActivity() {
         var myDoctor = Hospital.getDoctor(id)
         binding.myDoctorMassage.text = "دکتر ${myDoctor?.name} با شما تماس خواهد گرفت. "
 
-        val callIntent = Intent(Intent.ACTION_DIAL)
-        callIntent.data = Uri.parse("tel:${myDoctor?.phoneNumber}")
-        startActivity(callIntent)
 
         binding.submit.isEnabled = myDoctor?.onlineStatus == OnlineStatus.online
         if (!saveName().isNullOrBlank()){

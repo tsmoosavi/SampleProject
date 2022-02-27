@@ -1,6 +1,7 @@
 package com.example.sampleproject
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -27,6 +28,11 @@ class DoctorActivity : AppCompatActivity() {
         binding.statusView.text = doc?.onlineStatus.toString()
         binding.MedicalSpeciality.text = doc?.field
         title = doc?.name
+        binding.call.setOnClickListener{
+            val callIntent = Intent(Intent.ACTION_DIAL)
+            callIntent.data = Uri.parse("tel:${doc?.phoneNumber}")
+            startActivity(callIntent)
+        }
 
 
         binding.clconsult1.setOnClickListener{
