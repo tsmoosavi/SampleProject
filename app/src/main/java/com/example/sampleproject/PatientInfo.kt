@@ -1,7 +1,9 @@
 package com.example.sampleproject
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -25,6 +27,11 @@ class PatientInfo : AppCompatActivity() {
         var name = bundle?.getString("name")
         var myDoctor = Hospital.getDoctor(id)
         binding.myDoctorMassage.text = "دکتر ${myDoctor?.name} با شما تماس خواهد گرفت. "
+
+        val callIntent = Intent(Intent.ACTION_DIAL)
+        callIntent.data = Uri.parse("tel:${myDoctor?.phoneNumber}")
+        startActivity(callIntent)
+
         binding.submit.isEnabled = myDoctor?.onlineStatus == OnlineStatus.online
         if (!saveName().isNullOrBlank()){
             binding.patientName.visibility = View.GONE
@@ -36,7 +43,6 @@ class PatientInfo : AppCompatActivity() {
 
     private fun collectPatientData() {
         binding.submit.setOnClickListener{
-            Toast.makeText(this, "اطلاعات شما ثبت شد.", Toast.LENGTH_SHORT).show()
             var userName = binding.patientName.text.toString()
             var userPhone = binding.patientPhone.text.toString()
             var dataCollection : SharedPreferences = getSharedPreferences("kotlinStorage", Context.MODE_PRIVATE)
