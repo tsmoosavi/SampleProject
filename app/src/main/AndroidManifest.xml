@@ -11,7 +11,8 @@
         android:theme="@style/Theme.SampleProject">
         <activity
             android:name=".PatientInfo"
-            android:exported="false" />
+            android:exported="false"
+             android:parentActivityName=".DoctorActivity"/>
         <activity
             android:name=".HospitalFirstPage"
             android:exported="true">
