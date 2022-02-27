@@ -10,4 +10,5 @@
     <string name="callToDoctor">تماس با دکتر</string>
     <string name="welcome">به بیمارستان نور خوش آمدید</string>
     <string name="chooseDoctor">لطفا دکتر خود را انتخاب کنید</string>
+    <string name="submit">ثبت</string>
 </resources>

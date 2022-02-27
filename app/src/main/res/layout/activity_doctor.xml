@@ -108,6 +108,7 @@
         android:background="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clconsult1"
             android:layout_width="335dp"
             android:layout_height="68dp"
             android:layout_margin="20dp"
@@ -164,6 +165,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clconsult2"
             android:layout_width="335dp"
             android:layout_height="68dp"
             android:layout_margin="20dp"
@@ -221,6 +223,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clconsult3"
             android:layout_width="335dp"
             android:layout_height="68dp"
             android:layout_margin="20dp"

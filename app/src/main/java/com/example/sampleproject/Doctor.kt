@@ -16,7 +16,16 @@ object Hospital {
         doctorList.add(Doctor(2 , "پروانه نادری" , OnlineStatus.offline , "روانشناسی و مشاوره" ))
         doctorList.add(Doctor(2 , "ناهید صادقی" , OnlineStatus.online , "روانشناسی کودک، مشاور تحصیلی" ))
     }
+    fun getDoctor(id: Int):Doctor?{
+        for(doctor in doctorList){
+            if (doctor.id == id){
+                return doctor
+            }
+        }
+        return null
+    }
 }
+
 @Parcelize
 class Doctor(
     val id: Int,
