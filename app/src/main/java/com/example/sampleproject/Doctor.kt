@@ -13,7 +13,8 @@ object Hospital {
     fun setTestData(){
         doctorList.clear()
         doctorList.add(Doctor(1,"معصومه بهرامی",OnlineStatus.online,"مشاوره فردی، اضطراب، افسردگی، شغلی و تحصیلی، استعداد یابی..." ))
-        doctorList.add(Doctor(2 , "Dr. rostam" , OnlineStatus.offline , "روانشناسی و مشاوره" ))
+        doctorList.add(Doctor(2 , "پروانه نادری" , OnlineStatus.offline , "روانشناسی و مشاوره" ))
+        doctorList.add(Doctor(2 , "ناهید صادقی" , OnlineStatus.online , "روانشناسی کودک، مشاور تحصیلی" ))
     }
 }
 @Parcelize
