@@ -60,6 +60,7 @@ class PatientInfo : AppCompatActivity() {
             binding.patientPhone.visibility =View.GONE
         }
         binding.submit.setOnClickListener{
+            collectPatientData()
             var dataCollection : SharedPreferences = getSharedPreferences("kotlinStorage", Context.MODE_PRIVATE)
             gotoPatientDetail()
             var name =  dataCollection.getString("name","")
