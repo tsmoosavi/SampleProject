@@ -14,13 +14,9 @@ class DoctorActivity : AppCompatActivity() {
        binding = ActivityDoctorBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initViwes()
-        gotoPatientDetail()
 
     }
 
-    private fun gotoPatientDetail() {
-
-    }
 
     fun initViwes(){
         var doc = intent.getParcelableExtra<Doctor>("doctor")
@@ -33,6 +29,7 @@ class DoctorActivity : AppCompatActivity() {
             callIntent.data = Uri.parse("tel:${doc?.phoneNumber}")
             startActivity(callIntent)
         }
+
 
 
         binding.clconsult1.setOnClickListener{

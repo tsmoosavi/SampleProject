@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SampleProject">
         <activity
+            android:name=".CheckPatientReady"
+            android:exported="false" />
+        <activity
             android:name=".PatientInfo"
             android:exported="false"
-             android:parentActivityName=".DoctorActivity"/>
+            android:parentActivityName=".DoctorActivity" />
         <activity
             android:name=".HospitalFirstPage"
             android:exported="true">
