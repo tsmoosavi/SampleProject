@@ -4,11 +4,15 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Toast
 import com.example.sampleproject.databinding.ActivityDoctorBinding
 
 class DoctorActivity : AppCompatActivity() {
     lateinit var binding: ActivityDoctorBinding
+//    lateinit var doc: Doctor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        binding = ActivityDoctorBinding.inflate(layoutInflater)
@@ -17,6 +21,41 @@ class DoctorActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.share_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId){
+            R.id.share   -> {
+                shareDoctor()
+                true
+            }else->
+                return super.onOptionsItemSelected(item)
+        }
+
+    }
+
+    private fun shareDoctor(){
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, getDoctordetail())
+            type = "text/plain"
+        }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
+    }
+
+    private fun getDoctordetail():String {
+        var doc = intent.getParcelableExtra<Doctor>("doctor")
+        return "نام: دکتر" + doc?.name.toString() + ". شماره تماس: " +  doc?.phoneNumber
+
+//        return "hello Doctor"
+//    return "نام: دکتر" + doc.name + ". شماره تلفن:" + doc.phoneNumber
+    }
 
     fun initViwes(){
         var doc = intent.getParcelableExtra<Doctor>("doctor")
