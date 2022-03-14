@@ -93,8 +93,8 @@ class PatientInfo : AppCompatActivity() {
             result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK){
             val receivData = result.data
-            val beingOk = intent.getBooleanExtra("ok",false)
-            if (beingOk){
+            val beingOk = receivData?.getBooleanExtra("ok",false)
+            if (beingOk == true){
                 Toast.makeText(this, "شما آماده تماس هستید.", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(this, "شما آماده تماس  نیستید.", Toast.LENGTH_SHORT).show()

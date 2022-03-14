@@ -9,5 +9,4 @@ class HospitalFirstPageVM:ViewModel() {
 //        Hospital.setTestData()
 //        doctorList = Hospital.doctorList
 //    }
-
 }
