@@ -1,6 +1,7 @@
 package com.example.sampleproject
 
 import android.os.Parcelable
+import androidx.lifecycle.ViewModel
 import kotlinx.parcelize.Parcelize
 
 object Hospital {

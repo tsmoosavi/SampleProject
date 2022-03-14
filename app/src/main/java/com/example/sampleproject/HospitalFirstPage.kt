@@ -3,11 +3,12 @@ package com.example.sampleproject
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.example.sampleproject.databinding.ActivityHospitalFirstPageBinding
 
 
 class HospitalFirstPage : AppCompatActivity() {
-
+    val doctorListVM: HospitalFirstPageVM by viewModels()
     lateinit var binding: ActivityHospitalFirstPageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

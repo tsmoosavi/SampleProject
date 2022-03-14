@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.example.sampleproject.databinding.ActivityDoctorBinding
 
 class DoctorActivity : AppCompatActivity() {

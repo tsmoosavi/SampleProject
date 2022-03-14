@@ -4,16 +4,14 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import com.example.sampleproject.databinding.ActivityPatientInfoBinding
-
 class PatientInfo : AppCompatActivity() {
     lateinit var binding: ActivityPatientInfoBinding
     override fun onCreate(savedInstanceState: Bundle?) {
