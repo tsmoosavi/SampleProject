@@ -23,13 +23,13 @@ class HospitalFirstPage : AppCompatActivity() {
 
         val buttonsList= arrayListOf(binding.button,binding.button2,binding.button3)
 
-        binding.button.text = Hospital.doctorList[0].name
-        binding.button2.text = Hospital.doctorList[1].name
-        binding.button3.text = Hospital.doctorList[2].name
+        binding.button.text = doctorListVM.doctorList[0].name
+        binding.button2.text = doctorListVM.doctorList[1].name
+        binding.button3.text = doctorListVM.doctorList[2].name
 
         for(i in 0 until buttonsList.size){
             buttonsList[i].setOnClickListener{
-                goToDoctorActivity(Hospital.doctorList[i])
+                goToDoctorActivity(doctorListVM.doctorList[i])
             }
         }
 
