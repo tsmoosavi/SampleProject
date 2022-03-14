@@ -14,6 +14,7 @@ import androidx.activity.viewModels
 import com.example.sampleproject.databinding.ActivityPatientInfoBinding
 class PatientInfo : AppCompatActivity() {
     lateinit var binding: ActivityPatientInfoBinding
+    val patientRegister: PatientInfoVM by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPatientInfoBinding.inflate(layoutInflater)
@@ -46,7 +47,7 @@ class PatientInfo : AppCompatActivity() {
         var bundle = intent.getBundleExtra("bundle")
         var id = bundle!!.getInt("id")
         var name = bundle?.getString("name")
-        var myDoctor = Hospital.getDoctor(id)
+        var myDoctor = patientRegister.getDoctor(id)
         binding.myDoctorMassage.text = "دکتر ${myDoctor?.name} با شما تماس خواهد گرفت. "
 
 
@@ -92,13 +93,17 @@ class PatientInfo : AppCompatActivity() {
     val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
             result: ActivityResult ->
         if (result.resultCode == Activity.RESULT_OK){
-            val receivData = result.data
+            var receivData = result.data
             val beingOk = receivData?.getBooleanExtra("ok",false)
-            if (beingOk == true){
-                Toast.makeText(this, "شما آماده تماس هستید.", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(this, "شما آماده تماس  نیستید.", Toast.LENGTH_SHORT).show()
+            beingOk?.let {
+                if (it){
+
+                    Toast.makeText(this, "شما آماده تماس هستید.", Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this, "شما آماده تماس  نیستید.", Toast.LENGTH_SHORT).show()
+                }
             }
+
         }
     }
 

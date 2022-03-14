@@ -17,14 +17,14 @@ object Hospital {
         doctorList.add(Doctor(2 , "پروانه نادری" , OnlineStatus.offline , "روانشناسی و مشاوره","02144754796" ))
         doctorList.add(Doctor(3 , "ناهید صادقی" , OnlineStatus.online , "روانشناسی کودک، مشاور تحصیلی","02155729843" ))
     }
-    fun getDoctor(id: Int):Doctor?{
-        for(doctor in doctorList){
-            if (doctor.id == id){
-                return doctor
-            }
-        }
-        return null
-    }
+//    fun getDoctor(id: Int):Doctor?{
+//        for(doctor in doctorList){
+//            if (doctor.id == id){
+//                return doctor
+//            }
+//        }
+//        return null
+//    }
 }
 
 @Parcelize
