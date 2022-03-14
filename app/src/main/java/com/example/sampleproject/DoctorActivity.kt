@@ -13,6 +13,7 @@ import com.example.sampleproject.databinding.ActivityDoctorBinding
 
 class DoctorActivity : AppCompatActivity() {
     lateinit var binding: ActivityDoctorBinding
+    val docVModel:DoctorVM by viewModels()
 //    lateinit var doc: Doctor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,15 +105,15 @@ class DoctorActivity : AppCompatActivity() {
         }
 
 
-        var consult1 = Hospital.consultancyList[0]
+        var consult1 = docVModel.consultationTypeList[0]
         binding.tenMin.text = " مشاوره تلفنی ${consult1.time} دقیقه ای "
         binding.tenPrice.text = consult1.price.toString()+ " تومان"
 
-        var consult2 = Hospital.consultancyList[1]
+        var consult2 = docVModel.consultationTypeList[1]
         binding.thirtyMin.text = " مشاوره تصویری ${consult2.time} دقیقه ای "
         binding.thirtyPrice.text = consult2.price.toString() + "تومان "
 
-        var consult3 = Hospital.consultancyList[2]
+        var consult3 = docVModel.consultationTypeList[2]
         binding.sixtyMin.text = " مشاوره تلفنی ${consult3.time} دقیقه ای "
         binding.sixtyPrice.text = consult3.price.toString() + " تومان"
     }
