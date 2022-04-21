@@ -16,8 +16,11 @@ class HospitalFirstPage : AppCompatActivity() {
         binding = ActivityHospitalFirstPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Hospital.setTestData()
-       var adapter = DoctorListRecyclerViewAdapter(Hospital.doctorList)
+       var adapter = DoctorListRecyclerViewAdapter(Hospital.doctorList){
+           goToDoctorActivity(it)
+       }
         binding.recyclerView.adapter = adapter
+        adapter.notifyDataSetChanged()
 
 
 

@@ -1,12 +1,14 @@
 package com.example.sampleproject
 
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-
-class DoctorListRecyclerViewAdapter(val dataSet: List<Doctor>): RecyclerView.Adapter<DoctorListRecyclerViewAdapter.ViewHolder>()  {
+ typealias clickHandler = (Doctor) -> Unit
+class DoctorListRecyclerViewAdapter(val dataSet: List<Doctor>,var clickHandler:clickHandler):
+    RecyclerView.Adapter<DoctorListRecyclerViewAdapter.ViewHolder>()  {
     class  ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         var doctorId:TextView
         var doctorName:TextView
@@ -16,6 +18,7 @@ class DoctorListRecyclerViewAdapter(val dataSet: List<Doctor>): RecyclerView.Ada
             doctorId = view.findViewById<TextView>(R.id.doctorId)
              doctorName = view.findViewById<TextView>(R.id.doctorName)
              doctorField = view.findViewById<TextView>(R.id.doctorField)
+
         }
     }
 
@@ -30,6 +33,9 @@ class DoctorListRecyclerViewAdapter(val dataSet: List<Doctor>): RecyclerView.Ada
         holder.doctorId.text = dataSet[position].id.toString()
         holder.doctorName.text = dataSet[position].name
         holder.doctorField.text = dataSet[position].field
+        holder.doctorName.setOnClickListener{
+            clickHandler?.invoke(dataSet[position])
+        }
     }
     override fun getItemCount(): Int = dataSet.size
 }
