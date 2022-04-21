@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.RecyclerView
 import com.example.sampleproject.databinding.ActivityHospitalFirstPageBinding
 
 
@@ -14,9 +15,14 @@ class HospitalFirstPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHospitalFirstPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
         Hospital.setTestData()
+       var adapter = DoctorListRecyclerViewAdapter(Hospital.doctorList)
+        binding.recyclerView.adapter = adapter
+
+
+
+
+
 //        var doctor1 = Hospital.doctorList[0]
 //        var doctor2 = Hospital.doctorList[1]
 //        var doctor3 = Hospital.doctorList[2]

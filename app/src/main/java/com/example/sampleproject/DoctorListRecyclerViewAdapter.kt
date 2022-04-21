@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DoctorListRecyclerView(val dataSet: List<Doctor>): RecyclerView.Adapter<DoctorListRecyclerView.ViewHolder>()  {
+class DoctorListRecyclerViewAdapter(val dataSet: List<Doctor>): RecyclerView.Adapter<DoctorListRecyclerViewAdapter.ViewHolder>()  {
     class  ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         var doctorId:TextView
         var doctorName:TextView
@@ -28,6 +28,8 @@ class DoctorListRecyclerView(val dataSet: List<Doctor>): RecyclerView.Adapter<Do
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.doctorId.text = dataSet[position].id.toString()
+        holder.doctorName.text = dataSet[position].name
+        holder.doctorField.text = dataSet[position].field
     }
     override fun getItemCount(): Int = dataSet.size
 }
