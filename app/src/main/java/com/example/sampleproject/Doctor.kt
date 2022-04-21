@@ -35,7 +35,7 @@ class Doctor(
     var field : String,
     val phoneNumber: String,
     var  ImageId: Int? = null
-):Parcelable{}
+):Parcelable
 data class Consultancy(val id:Int,
                        val time: Int,
                        val price: Int,
